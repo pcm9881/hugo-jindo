@@ -1,0 +1,42 @@
+<aside class="menu-wrapper">
+    <div class="menu-content">
+        <div class="menu-inner-content">
+            <nav>
+                <div class="menu-title-wrapper">
+                    <a href="/">
+                        {{ if eq .Site.Params.TitleCategory "image" }}
+                        <img class="menu-title" src="/images/title.png" alt="title">
+                        {{ else }}
+                        <h2>{{ $.Site.Params.Title }}</h2>
+                        {{ end }}
+                    </a>
+                </div>
+
+                <div class="menu-logo-wrapper">
+                    <img class="menu-logo" src="/images/logo.png" alt="logo"/>
+                </div>
+
+                {{- if .Site.Params.Search}}
+                    {{ partial "search.html" . }}
+                {{- end}}
+                
+                {{- if .Site.Params.Languages}}
+                    {{ partial "languages.html" . }}
+                {{- end}}
+
+                <div class="menu-item">
+                    {{ with site.Menus.main }}
+                        {{ range . }}
+                            {{ if $.IsMenuCurrent .Menu . }}
+                                <a class="active" href="{{ .URL }}">{{ i18n .Identifier . }}</a>
+                            {{ else }}
+                                <a href="{{ .URL }}">{{ i18n .Identifier . }}</a>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </nav>
+            {{ partial "footer.html" . }}
+        </div>
+    </div>
+</aside>

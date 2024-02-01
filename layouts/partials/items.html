@@ -1,0 +1,24 @@
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+{{ range $paginator.Pages }}
+<div class="post-item">
+    <div class="card">
+        <div class="card-image">
+            {{if .Params.thumbnail }}
+                <img class="thumbnail" src="/images/posts/{{ .Params.thumbnail }}" alt="Hugo Logo">
+            {{else}}
+                <img class="thumbnail" src="/images/posts/hugo-logo.png" alt="Hugo Logo">
+            {{end}}
+            <img>
+        </div>
+        <div class="card-header">
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </div>
+        <div class="card-content">
+            {{ .Description }}
+        </div>
+        <div class="card-footer">
+            {{ .Date.Format "2006-01-02" }}
+        </div>
+    </div>
+</div>
+{{ end }}

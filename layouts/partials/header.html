@@ -1,0 +1,33 @@
+<section class="w-100 m-0 p-0">
+    <div class="header-cover">
+        <div>
+            <a class="brand hv-blue c-pointer" href="/">{{ .Site.Title}}</a>
+        </div>
+        <div class="search-cover">
+            <input class="search-input" type="text">
+            <button class="search-button">{{ i18n "search" . }}</button>
+        </div>
+
+        <div class="header-item">
+            {{ with site.Menus.main }}
+                {{ range . }}
+                    {{ if $.IsMenuCurrent .Menu . }}
+                        <a class="active" href="{{ .URL }}">{{ i18n .Identifier . }}</a>
+                    {{ else }}
+                        <a href="{{ .URL }}">{{ i18n .Identifier . }}</a>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+
+        
+
+        <div class="header-menu">
+            <div class="menu-icon" onclick="(menuToggle(this))">
+                <div class="menu-bar1"></div>
+                <div class="menu-bar2"></div>
+                <div class="menu-bar3"></div>
+            </div>
+        </div>
+    </div>
+</section>

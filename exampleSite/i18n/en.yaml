@@ -1,0 +1,13 @@
+# General
+- id: read_more
+  translation: "Read more…"
+
+- id: menu_label
+  translation: "Menu"
+
+- id: sidemenu_title
+  translation: "Menu"
+
+# 404
+- id: 404_title
+  translation: "404. Page not found"
