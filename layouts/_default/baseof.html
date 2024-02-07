@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.LanguageCode }}">
-    {{ partial "head.html" . }}
-    <body>
-        <div class="container flex">
-            {{ partial "menu.html" . }}
-            <div class="page-wrapper">
-                <div class="page-content">
-                    {{ block "main" . }}{{ end }}
-                </div>
-            </div>
+  {{ partial "head.html" . }}
+  <body>
+    <div class="container flex">
+      {{ partial "menu.html" . }}
+      <div class="page-wrapper">
+        <div class="page-content">{{ block "main" . }}{{ end }}</div>
+      </div>
 
-            <div class="toc-wrapper">
-                {{ partial "toc.html" . }}
-            </div>
-        </div>
-    </body>
+      {{ if .Site.Params.Toc }}
+      <div class="toc-wrapper">{{ partial "toc.html" . }}</div>
+      {{ end }}
+    </div>
+  </body>
 </html>

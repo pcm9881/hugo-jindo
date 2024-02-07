@@ -27,11 +27,22 @@
   <script type="text/javascript" src="/js/search.js"></script>
   {{- end}}
 
+  <!-- slide -->
+  {{- if .Site.Params.Slide }}
+  <link rel="stylesheet" href="/css/slide.css" />
+  {{- end}}
+
+  <!-- toc -->
+  {{- if .Site.Params.Toc }}
+  <link rel="stylesheet" href="/css/toc.css" />
+  {{- end}}
+
   <!-- language -->
   {{- if .Site.Params.Languages }}
   <link rel="stylesheet" href="/css/languages.css" />
   <script type="text/javascript" src="/js/languages.js"></script>
   {{- end}} {{- if .Site.Config.Services.GoogleAnalytics.ID}}
+
   <!-- Google Tag Manager -->
   <script>
     (function (w, d, s, l, i) {
