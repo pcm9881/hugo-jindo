@@ -2,7 +2,6 @@
 <main aria-role="main">
   <header class="homepage-header">
     <h1>{{ .Title }}</h1>
-    <h1>Hello 월드</h1>
     {{ with .Params.subtitle }}
     <span class="subtitle">{{ . }}</span>
     {{ end }}
@@ -15,17 +14,31 @@
     <div class="slide-content">
       <ul id="slide" class="slide">
         {{ range first 5 .Site.RegularPages }}
-        <li class="slide-item">
-          {{ if .Params.thumbnail }}
-          <img
-            class="slide-image"
-            src="/images/thumbnails/{{ .Params.thumbnail }}"
-            alt="{{ .Title }}"
-          />
-          {{ end }}
-          <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-          <div class="post-content">{{ .Summary }}</div>
-          <a href="{{ .Permalink }}" class="readmore">Read more</a>
+        <li>
+          <div class="slide-item">
+            <div class="card-image">
+              {{ if .Params.thumbnail }}
+              <img
+                class="slide-image"
+                src="/images/thumbnails/{{ .Params.thumbnail }}"
+                alt="{{ .Title }}"
+              />
+              {{ else }}
+              <div class="slide-image slide-image-sample"></div>
+              {{ end }}
+            </div>
+            <div class="card-info">
+              <div class="card-title">
+                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+              </div>
+              <div class="card-content">{{ .Params.description }}</div>
+              <div class="card-footer">
+                <a href="{{ .Permalink }}" class="readmore"
+                  >{{i18n "read_more" .}}</a
+                >
+              </div>
+            </div>
+          </div>
         </li>
         {{ end }}
       </ul>
