@@ -1,19 +1,23 @@
-<ul onclick="onToggleLanguages()">
-    <li>
-        <input class="toggle" type="checkbox" id="languages" >
-        <label for="languages" class="flex justify-between">
-            <a>
-                <img src="/svg/translate.svg" class="language-icon" alt="Languages">{{ $.Language.LanguageName }}
-            </a>
-        </label>
-        <ul>
-            {{ range $.Site.Home.AllTranslations }}
-            <li>
-                <div class="option {{ .Language.LanguageName }}" onclick="window.location.href='{{ .RelPermalink }}'">
-                  <p>{{ .Language.LanguageName }}</p>
-                </div>
-            </li>
-            {{ end }}
-        </ul>
-    </li>
+<ul class="languages-container" onclick="onToggleLanguages()">
+  <li>
+    <input class="toggle" type="checkbox" id="languages" />
+    <label for="languages" class="flex justify-between">
+      <a>
+        <img src="/svg/translate.svg" class="language-icon" alt="Languages" />{{
+        $.Language.LanguageName }}
+      </a>
+    </label>
+    <ul class="languages-items">
+      {{ range $.Site.Home.AllTranslations }}
+      <li>
+        <div
+          class="languages-option {{ .Language.LanguageName }}"
+          onclick="window.location.href='{{ .RelPermalink }}'"
+        >
+          <p>{{ .Language.LanguageName }}</p>
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </li>
 </ul>

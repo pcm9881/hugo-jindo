@@ -1,8 +1,21 @@
 <div class="footer-wrapper">
-    <div class="footer-copyright">
-        {{ .Site.Copyright | safeHTML }}
+  <hr />
+  <!-- links -->
+  <div class="links">
+    {{- if .Site.Params.author.github }}
+    <div class="link-item">
+      <a
+        href="https://github.com/{{ .Site.Params.author.github }}"
+        target="_blank"
+        ><img class="link-icon" src="/svg/github-mark.svg"
+      /></a>
     </div>
-    <div class="powered-by">
-        Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/pcm9881/hugo-jindo">Hugo Jindo</a> theme.
-    </div>
+    {{ end }}
+  </div>
+
+  <div class="footer-copyright">{{ .Site.Copyright | safeHTML }}</div>
+  <div class="powered-by">
+    Powered by <a href="https://gohugo.io/">Hugo</a> and
+    <a href="https://github.com/pcm9881/hugo-jindo">Hugo Jindo</a> theme.
+  </div>
 </div>
