@@ -46,10 +46,10 @@
   {{- end}}
 
   <!-- Naver Site Verification -->
-  {{- if .Site.Config.Services.NaverSiteVerification}}
+  {{- if .Site.Params.Services.NaverSiteVerification.ID}}
   <meta
     name="naver-site-verification"
-    content="{{ .Site.Config.Services.NaverSiteVerification }}"
+    content="{{ $.Site.Params.Services.NaverSiteVerification.ID }}"
   />
   {{- end}} {{- if .Site.Config.Services.GoogleAnalytics.ID}}
   <!-- Google Tag Manager -->
