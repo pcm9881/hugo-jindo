@@ -1,0 +1,14 @@
+{{define "main"}}
+<ul class="categoires-container">
+  {{ range $category, $weightedPages := .Site.Taxonomies.categories }}
+  <li>
+    <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+    <ul>
+      {{ range $weightedPages }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+    </ul>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

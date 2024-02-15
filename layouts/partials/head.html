@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="/css/header.css" />
   <link rel="stylesheet" href="/css/footer.css" />
   <link rel="stylesheet" href="/css/single.css" />
+  <link rel="stylesheet" href="/css/tags.css" />
+  <link rel="stylesheet" href="/css/categories.css" />
   <link rel="stylesheet" href="/css/list.css" />
 
   <!-- js -->
@@ -41,8 +43,15 @@
   {{- if .Site.Params.Languages }}
   <link rel="stylesheet" href="/css/languages.css" />
   <script type="text/javascript" src="/js/languages.js"></script>
-  {{- end}} {{- if .Site.Config.Services.GoogleAnalytics.ID}}
+  {{- end}}
 
+  <!-- Naver Site Verification -->
+  {{- if .Site.Config.Services.NaverSiteVerification}}
+  <meta
+    name="naver-site-verification"
+    content="{{ .Site.Config.Services.NaverSiteVerification }}"
+  />
+  {{- end}} {{- if .Site.Config.Services.GoogleAnalytics.ID}}
   <!-- Google Tag Manager -->
   <script>
     (function (w, d, s, l, i) {

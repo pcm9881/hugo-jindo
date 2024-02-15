@@ -14,7 +14,7 @@ defaultMarkdownHandler = 'goldmark'
 [services]
 
 [services.googleAnalytics]
-ID = "GTM-TN5ZTCPB"
+ID = "GoogleAnalytics ID"
 
 defaultContentLanguage = "ko"
 defaultContentLanguageInSubdir = false
@@ -26,22 +26,22 @@ languageName = "한국어"
 contentDir = 'content.ko'
 disabled = false
 weight = 1
-[[languages.ko.menu.main]]
-identifier = "home"
-name = '홈'
-pageRef = '/'
-weight = 10
-[[languages.ko.menu.main]]
+[[languages.ko.menus.main]]
 identifier = "about"
 name = '소개'
 pageRef = '/about'
+weight = 10
+[[languages.ko.menus.main]]
+identifier = "posts"
+name = '포스트'
+pageRef = '/posts'
 weight = 20
-[[languages.ko.menu.main]]
+[[languages.ko.menus.main]]
 name = '카테고리'
 identifier = "categories"
 pageRef = '/categories'
 weight = 30
-[[languages.ko.menu.main]]
+[[languages.ko.menus.main]]
 name = '태그'
 pageRef = '/tags'
 identifier = "tags"
@@ -51,22 +51,22 @@ languageName = "English"
 contentDir = 'content.en'
 disabled = false
 weight = 2
-[[languages.en.menu.main]]
-identifier = "home"
-name = 'Home'
-pageRef = '/'
-weight = 10
-[[languages.en.menu.main]]
+[[languages.en.menus.main]]
 identifier = "about"
 name = 'About'
 pageRef = '/about'
+weight = 10
+[[languages.en.menus.main]]
+identifier = "posts"
+name = 'Posts'
+pageRef = '/posts'
 weight = 20
-[[languages.en.menu.main]]
+[[languages.en.menus.main]]
 identifier = "categories"
 name = 'Categories'
 pageRef = '/categories'
 weight = 30
-[[languages.en.menu.main]]
+[[languages.en.menus.main]]
 identifier = "tags"
 name = 'Tags'
 pageRef = '/tags'
@@ -84,3 +84,12 @@ Search = false
 
 # Translate
 Languages = true
+
+# Slide
+Slide = true
+
+# Slide
+Toc = true
+
+[params.author]
+github = "github username"
