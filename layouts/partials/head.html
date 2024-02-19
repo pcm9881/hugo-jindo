@@ -51,6 +51,11 @@
     name="naver-site-verification"
     content="{{ $.Site.Params.Services.NaverSiteVerification.ID }}"
   />
+  {{- end}} {{- if .Site.Params.Services.GoogleSiteVerification.ID}}
+  <meta
+    name="google-site-verification"
+    content="{{ $.Site.Params.Services.GoogleSiteVerification.ID}}"
+  />
   {{- end}} {{- if .Site.Config.Services.GoogleAnalytics.ID}}
   <!-- Google Tag Manager -->
   <script>
