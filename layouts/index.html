@@ -29,7 +29,9 @@
             </div>
             <div class="card-info">
               <div class="card-title">
-                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                <a href="{{ .Permalink }}">
+                  <h2>{{ .Title }}</h2>
+                </a>
               </div>
               <div class="card-content">{{ .Params.description }}</div>
               <div class="card-footer">
